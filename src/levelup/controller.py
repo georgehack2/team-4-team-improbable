@@ -22,10 +22,11 @@ class GameController:
     def __init__(self):
         self.status = GameStatus()
 
-    def start_game(self):
-        # TODO: implement method here and remove the print statement below
-        print("start_game method not yet implemented")            
 
+    def start_game(self):
+        self.map = Map()
+
+        self.character.enter_map(self.map)
         # Status code is written for you
         self.status.current_position = (self.character.current_position.x, self.character.current_position.y)
         self.status.move_count = 0
@@ -36,9 +37,7 @@ class GameController:
         self.status.character_name = self.character.name
 
     def move(self, direction: Direction) -> None:
-        # TODO: implement method here and remove the print statement below
-        print("move method not yet implemented")
-
+        self.character.move(direction)
         # Status code is written for you
         self.status.current_position = (self.character.current_position.x, self.character.current_position.y)
         self.status.move_count = self.status.move_count + 1
