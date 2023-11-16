@@ -6,11 +6,11 @@ from levelup.position import Position
 
 class TestMap(TestCase):
     
-    # # Remove comments to run this test, which will motivate you to write the production method
-    # def test_init_creates_positions(self):
-    #     testobj = Map()
-    #     self.assertNotEqual(None, testobj.positions)
-    #     self.assertEqual(10, len(testobj.positions))
+    # Remove comments to run this test, which will motivate you to write the production method
+    def test_init_creates_positions(self):
+        testobj = Map()
+        self.assertNotEqual(None, testobj.positions)
+        self.assertEqual(10, len(testobj.positions))
 
     # # Remove comments to run this test, which will motivate you to write the production method
     # def test_init_creates_positions_with_correct_x_y(self):
