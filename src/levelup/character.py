@@ -18,9 +18,7 @@ class Character:
             self.name = character_name
 
     def move(self, direction :Direction) -> None:
-        print("1 in Character.move() current_position", self.current_position)
         self.current_position = self.map.calculate_new_position(self.current_position, direction)
-        print("2 in Character.move() current_position", self.current_position)
 
 
     def enter_map(self, map :Map) -> None:
