@@ -11,5 +11,4 @@ class MapDouble (Map):
         self.starting_position = Position(self.STUBBED_X, self.STUBBED_Y)
 
     def calculate_new_position(self, current_position: Position, direction: Direction) -> Position:
-        # What should we return here so our character tests will work in isolation?
         return self.starting_position

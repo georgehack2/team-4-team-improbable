@@ -18,9 +18,8 @@ class Character:
             self.name = character_name
 
     def move(self, direction :Direction) -> None:
-        # TODO: implement method here and remove the print statement below
-        print("move method not fully implemented")
-        self.map.calculate_new_position(self.current_position, direction)
+        self.current_position = self.map.calculate_new_position(self.current_position, direction)
+
 
     def enter_map(self, map :Map) -> None:
         self.map = map
