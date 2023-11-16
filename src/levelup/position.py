@@ -4,8 +4,8 @@ class Position ():
     y = -100
 
     def __init__(self, x: int, y: int):
-         # TODO: implement method here and remove the print statement below
-        print("Position constructor method not yet implemented")
+        self.x = x
+        self.y = y
 
     # Overriding the equals operator to make sure we are comparing values on positions correctly - prewritten for you
     def __eq__(self, obj):
