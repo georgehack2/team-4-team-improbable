@@ -22,6 +22,14 @@ class Map ():
         return isValid
 
     def calculate_new_position(self, current_position: Position, direction: Direction) -> Position:
-        # TODO: implement method here and remove the print statement below
-        print("calculate_new_position method not yet implemented")
-        return None
+        if direction == Direction.NORTH:
+            current_position.y += 1
+        elif direction == Direction.SOUTH:
+            current_position.y -= 1
+        elif direction == Direction.EAST:
+            current_position.x -= 1
+        elif direction == Direction.WEST:
+            current_position.x += 1 
+                
+        return current_position
+

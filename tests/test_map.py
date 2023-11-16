@@ -49,13 +49,13 @@ class TestMap(TestCase):
         pos = Position(10,10)
         return self.assertFalse(testobj.is_position_valid(pos))
 
-    # # Remove comments to run this test, which will motivate you to write the production method
-    # def test_calculate_new_position_when_valid_NORTH(self):
-    #     testobj = Map()
-    #     startingPosition = Position(0,0)
-    #     expectedPosition = Position(0,1)
-    #     actualPosition = testobj.calculate_new_position(startingPosition, Direction.NORTH)
-    #     self.assertEqual(expectedPosition, actualPosition)
+    # Remove comments to run this test, which will motivate you to write the production method
+    def test_calculate_new_position_when_valid_NORTH(self):
+        testobj = Map()
+        startingPosition = Position(0,0)
+        expectedPosition = Position(0,1)
+        actualPosition = testobj.calculate_new_position(startingPosition, Direction.NORTH)
+        self.assertEqual(expectedPosition, actualPosition)
 
     # Given the example above, what should these test?
     def test_calculate_new_position_when_valid_SOUTH(self):
