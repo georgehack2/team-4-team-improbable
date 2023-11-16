@@ -18,19 +18,20 @@ class TestCharacter(TestCase):
     def test_enter_map_sets_map_and_updates_position(self):
          testobj = Character(self.ARBITRARY_NAME)
          stubbed_map = MapDouble()
+         print("enter_map_sets_map...")
          testobj.enter_map(stubbed_map)
          self.assertEqual(stubbed_map, testobj.map)
          self.assertEqual(testobj.current_position, stubbed_map.starting_position)
 
-    '''# Remove comments to run this test, which will motivate you to write the production method
+
     def test_move_updates_position(self):
         testobj = Character(self.ARBITRARY_NAME)
         stubbed_map = MapDouble()
-        testobj.map = stubbed_map
         
-        testobj.move(Direction.EAST)
+        testobj.enter_map(stubbed_map)
+        #testobj.move(Direction.EAST)
 
+        print("test_move_updates_position: ", testobj.current_position.x)
         self.assertEqual(stubbed_map.STUBBED_X, testobj.current_position.x)
         self.assertEqual(stubbed_map.STUBBED_Y, testobj.current_position.y)
 
-'''
