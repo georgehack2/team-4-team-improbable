@@ -25,24 +25,29 @@ class TestMap(TestCase):
 
     # Given the example above, what should these test?
     def test_is_position_valid_when_x_too_small(self):
-        # TODO: Put code here
-        pass
+        testobj = Map()
+        pos = Position(-1,0)
+        return self.assertFalse(testobj.is_position_valid(pos))
 
     def test_is_position_valid_when_x_too_big(self):
-        # TODO: Put code here
-        pass
+        testobj = Map()
+        pos = Position(10,0)
+        return self.assertFalse(testobj.is_position_valid(pos))
 
     def test_is_position_valid_when_y_too_small(self):
-        # TODO: Put code here
-        pass
+        testobj = Map()
+        pos = Position(0,-1)
+        return self.assertFalse(testobj.is_position_valid(pos))
 
     def test_is_position_valid_when_y_too_big(self):
-        # TODO: Put code here
-        pass
+        testobj = Map()
+        pos = Position(0,10)
+        return self.assertFalse(testobj.is_position_valid(pos))
 
     def test_is_position_valid_when_x_and_y_too_big(self):
-        # TODO: Put code here
-        pass
+        testobj = Map()
+        pos = Position(10,10)
+        return self.assertFalse(testobj.is_position_valid(pos))
 
     # # Remove comments to run this test, which will motivate you to write the production method
     # def test_calculate_new_position_when_valid_NORTH(self):

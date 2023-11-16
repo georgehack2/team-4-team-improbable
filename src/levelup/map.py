@@ -18,9 +18,8 @@ class Map ():
                 self.positions[x_val][y_val] = Position(x_val, y_val)
         
     def is_position_valid(self, position :Position) -> bool:
-        # TODO: implement method here and remove the print statement below
-        print("is_position_valid method not yet implemented")
-        return False        
+        isValid = (position.x >= 0 and position.x <= 9 and position.y >= 0 and position.y <= 9)
+        return isValid
 
     def calculate_new_position(self, current_position: Position, direction: Direction) -> Position:
         # TODO: implement method here and remove the print statement below
