@@ -23,8 +23,5 @@ class Character:
         self.map.calculate_new_position(self.current_position, direction)
 
     def enter_map(self, map :Map) -> None:
-        print("in enter_map")
-        print("map.starting_position.x", map.starting_position.x)
         self.map = map
         self.current_position = map.starting_position
-        print("enter_map: ", self.current_position.x, map.starting_position.x)
