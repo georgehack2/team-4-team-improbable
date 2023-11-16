@@ -14,7 +14,6 @@ class Map ():
     def __init__(self):
         for x_val in range(10):
              for y_val in range(10):
-                print("x_val", x_val, "y_val", y_val)
                 self.positions[x_val][y_val] = Position(x_val, y_val)
         
     def is_position_valid(self, position :Position) -> bool:
@@ -22,14 +21,23 @@ class Map ():
         return isValid
 
     def calculate_new_position(self, current_position: Position, direction: Direction) -> Position:
+
+        x : int = current_position.x
+        y : int = current_position.y
+
         if direction == Direction.NORTH:
-            current_position.y += 1
+            y += 1
         elif direction == Direction.SOUTH:
-            current_position.y -= 1
+            y -= 1
         elif direction == Direction.EAST:
-            current_position.x -= 1
+            x += 1
         elif direction == Direction.WEST:
-            current_position.x += 1 
-                
+            x -= 1 
+
+        new_position = Position(x, y)    
+
+        if self.is_position_valid(new_position):
+            current_position = self.positions[x][y]
+
         return current_position
 
