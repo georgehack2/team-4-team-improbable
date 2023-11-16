@@ -16,7 +16,7 @@ class Map ():
        
         for x_val in range(10):
              for y_val in range(10):
-                positions.append(Position(x_val,y_val))
+                self.positions.append(Position(x_val,y_val))
         # print("map constructor method not yet implemented")
 
     def is_position_valid(self, position :Position) -> bool:
