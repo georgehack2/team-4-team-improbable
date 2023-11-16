@@ -24,6 +24,20 @@ class GameApp:
         return response
 
     def create_character(self):
+        print("\n")
+        print("                                                  /\\")
+        print("                                                 /  \\")
+        print("                                                (    )")
+        print("                                               (  | | )")
+        print("                                                (  ^ )")
+        print("                                                   |")
+        print("                                            ______ |_____")
+        print("                                                   |   ")
+        print("                                                   |  ")
+        print("                                                  / \\")
+        print("                                                 /   \\")
+        print("                                                /     \\")
+        print("\n")
         character = self.prompt("Enter character name", lambda x: len(x) > 0)
         self.controller.create_character(character)
         print(f"Welcome, {self.controller.status.character_name}")
@@ -43,10 +57,28 @@ class GameApp:
                 
 
     def start(self):
+        self.welcome()
         self.create_character()
         self.controller.start_game()
         self.starting_pos = self.controller.status.current_position
         self.move_loop()
+
+    def welcome(self):
+        print("                       *******************************************************")
+        print("                       *                                                     *")             
+        print("                       *               Welcome to the Level Up Game          *")
+        print("                       *                                                     *")             
+        print("                       *                                                     *")             
+        print("                       *                  A Game of Exploration              *")
+        print("                       *                                                     *")             
+        print("                       *******************************************************")
+
+        response = input("\nDo you want to play a game? y for Yes, n or q to quit\n")
+        
+        if response == 'q' or response == 'n':
+            print("Goodbye!")
+            quit()
+
 
     def quit(self):
         print(f"{self.controller.status.character_name} started on {self.starting_pos}, ended on {self.controller.status.current_position} and moved {self.controller.status.move_count} times.")
