@@ -13,10 +13,10 @@ class TestMap(TestCase):
         self.assertEqual(10, len(testobj.positions))
 
     # Remove comments to run this test, which will motivate you to write the production method
-    # def test_init_creates_positions_with_correct_x_y(self):
-        # testobj = Map()
-        # self.assertEqual(3, testobj.positions[3][0].x)
-        # self.assertEqual(7, testobj.positions[3][7].y)
+    def test_init_creates_positions_with_correct_x_y(self):
+        testobj = Map()
+        self.assertEqual(3, testobj.positions[3][0].x)
+        self.assertEqual(7, testobj.positions[3][7].y)
 
     # # Remove comments to run this test, which will motivate you to write the production method
     # def test_is_position_valid_when_true(self):
