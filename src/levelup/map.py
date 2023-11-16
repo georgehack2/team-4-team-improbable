@@ -34,9 +34,7 @@ class Map ():
         elif direction == Direction.WEST:
             x -= 1 
 
-        new_position = Position(x, y)    
-
-        if self.is_position_valid(new_position):
+        if self.is_position_valid(Position(x, y)):
             current_position = self.positions[x][y]
 
         return current_position
