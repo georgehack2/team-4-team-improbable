@@ -13,7 +13,10 @@ class Map ():
 
     def __init__(self):
         # TODO: implement method here and remove the print statement below
-        self.positions = range(10) 
+       
+        for x_val in range(10):
+             for y_val in range(10):
+                positions.append(Position(x_val,y_val))
         # print("map constructor method not yet implemented")
 
     def is_position_valid(self, position :Position) -> bool:
