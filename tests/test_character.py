@@ -29,9 +29,8 @@ class TestCharacter(TestCase):
         stubbed_map = MapDouble()
         
         testobj.enter_map(stubbed_map)
-        #testobj.move(Direction.EAST)
+        testobj.move(Direction.EAST)
 
-        print("test_move_updates_position: ", testobj.current_position.x)
         self.assertEqual(stubbed_map.STUBBED_X, testobj.current_position.x)
         self.assertEqual(stubbed_map.STUBBED_Y, testobj.current_position.y)
 
