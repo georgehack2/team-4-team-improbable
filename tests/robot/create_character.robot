@@ -5,7 +5,7 @@ Library           CreateCharacterLibrary.py
 
 *** Test Cases ***      characterNameInput     characterNameOutput
 Provided name           Erin                   Erin
-Default name            ${EMPTY}               Character
+Default name            ${EMPTY}               W. Fargo
 
 *** Keywords ***
 Create character
