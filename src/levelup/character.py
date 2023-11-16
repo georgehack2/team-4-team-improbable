@@ -7,7 +7,7 @@ DEFAULT_CHARACTER_NAME = "W. Fargo"
 class Character:
     # In python, we don't use getters. So no getPosition or getName for this class
     name = ""
-    current_position :Position = Position(-100,-100)
+    current_position :Position = Position(-100, -100)
     map :Map = Map()
 
     # Since python doesn't do method overloading, this is how we support a constructor with optional parameters
@@ -18,7 +18,9 @@ class Character:
             self.name = character_name
 
     def move(self, direction :Direction) -> None:
+        print("1 in Character.move() current_position", self.current_position)
         self.current_position = self.map.calculate_new_position(self.current_position, direction)
+        print("2 in Character.move() current_position", self.current_position)
 
 
     def enter_map(self, map :Map) -> None:

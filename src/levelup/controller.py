@@ -28,6 +28,7 @@ class GameController:
 
         self.character.enter_map(self.map)
         # Status code is written for you
+        print("in controller.start_game()", self.character.current_position)
         self.status.current_position = (self.character.current_position.x, self.character.current_position.y)
         self.status.move_count = 0
 
