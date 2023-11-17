@@ -24,20 +24,24 @@ class GameApp:
         return response
 
     def create_character(self):
-        print("\n")
-        print("                                                  /\\")
-        print("                                                 /  \\")
-        print("                                                (    )")
-        print("                                               (  | | )")
-        print("                                                (  ^ )")
-        print("                                                   |")
-        print("                                            ______ |_____")
-        print("                                                   |   ")
-        print("                                                   |  ")
-        print("                                                  / \\")
-        print("                                                 /   \\")
-        print("                                                /     \\")
-        print("\n")
+        print(r"""
+
+
+                                                    /\
+                                                   /  \
+                                                  (    )
+                                                 (  | | )
+                                                  (  ^ )
+                                                     |
+                                              ______ |_____
+                                                     |   
+                                                     |  
+                                                    / \
+                                                   /   \
+                                                  /     \
+
+        
+        """)
         character = self.prompt("Enter character name", lambda x: len(x) > 0)
         self.controller.create_character(character)
         print(f"Welcome, {self.controller.status.character_name}")
@@ -52,8 +56,7 @@ class GameApp:
                 self.quit()
             direction = Direction(response)
             self.controller.move(direction)
-            print(f"You moved {direction.name}")
-
+        
             if self.controller.is_finished:
                 print("")
                 print("**********************************")
@@ -63,6 +66,7 @@ class GameApp:
                 print("You have made the IMPROBABLE ... POSSIBLE!\n")
                 self.quit()
             else:
+                print(f"You moved {direction.name}")
                 print(self.controller.status)
 
                 
