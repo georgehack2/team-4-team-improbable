@@ -71,7 +71,7 @@ class GameApp:
 ░░▒█░░ ▀▀▀▀ ░▀▀▀ 　 ▒█▄▀▄█ ▀▀▀▀ ▀░░▀ ▄ 
 
                 """)
-                print("You have made the IMPROBABLE ... POSSIBLE!\n\nGoodbye!\n\n")
+                print("You have made the IMPROBABLE ... POSSIBLE!\n\n")
                 self.quit()
             else:
                 print(f"You moved {direction.name}")
