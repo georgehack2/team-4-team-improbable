@@ -8,6 +8,9 @@ from levelup.position import Position
 
 class GameStatus:
     character_name: str = ""
+    CURRENT_POS_ICON: str = "@"
+    STARTING_POS_ICON: str = "S"
+    EMPTY_POS_ICON: str = "."
     start_position: tuple = (-100,-100)
     current_position: tuple = (-100,-100)
     move_count: int = 0
@@ -28,11 +31,11 @@ class GameStatus:
 
             while x < len(self.map.positions[1]):
                 if x == self.current_position[0] and y == self.current_position[1]:
-                    str += "@"
+                    str += self.CURRENT_POS_ICON
                 elif x == self.start_position[0] and y == self.start_position[1]:
-                    str += "S"
+                    str += self.STARTING_POS_ICON
                 else:
-                    str += "."
+                    str += self.EMPTY_POS_ICON
                 x += 1
 
         return str
