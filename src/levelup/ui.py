@@ -102,10 +102,11 @@ class GameApp:
         response = input("\nDo you want to play a game? y for Yes, n or q to quit: ")
         
         if response == 'q' or response == 'n':
-            print("Goodbye!\n\n")
+            print("\nGoodbye!\n\n")
             quit()
 
 
     def quit(self):
         print(f"{self.controller.status.character_name} started on {self.starting_pos}, ended on {self.controller.status.current_position} and moved {self.controller.status.move_count} times.")
+        print("\nGoodbye!\n\n")
         quit()
