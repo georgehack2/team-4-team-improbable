@@ -53,7 +53,14 @@ class GameApp:
             direction = Direction(response)
             self.controller.move(direction)
             print(f"You moved {direction.name}")
-            print(self.controller.status)
+
+            if self.controller.is_finished:
+                print("CONGRATULATIONS! You’ve won!\n")
+                print("You have made the IMPROBABLE .... POSSIBLE!\n")
+                self.quit()
+            else:
+                print(self.controller.status)
+
                 
 
     def start(self):
@@ -64,14 +71,20 @@ class GameApp:
         self.move_loop()
 
     def welcome(self):
-        print("                       *******************************************************")
-        print("                       *                                                     *")             
-        print("                       *               Welcome to the Level Up Game          *")
-        print("                       *                                                     *")             
-        print("                       *                                                     *")             
-        print("                       *                  A Game of Exploration              *")
-        print("                       *                                                     *")             
-        print("                       *******************************************************")
+        print("""
+                               *******************************************************
+                               *                                                     *             
+                               *               Welcome to the Level Up Game          *
+                               *                                                     *             
+                               *                                                     *             
+                               *                  A Game of Exploration              *
+                               *                                                     *             
+                               *******************************************************
+
+        You have entered a world where you are an engineer at a large financial services corporation. You will 
+        explore the sprawling corporate campus. If you are lucky, you’ll find the FREE LUNCH and go home a WINNER. 
+
+        """)
 
         response = input("\nDo you want to play a game? y for Yes, n or q to quit\n")
         

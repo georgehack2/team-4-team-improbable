@@ -46,6 +46,8 @@ class GameController:
     status: GameStatus
     character: Character
     map: Map
+    TREASURE_COORDINATES: tuple[int, int] = (8, 8)
+    is_finished: bool = False
 
     def __init__(self):
         self.status = GameStatus()
@@ -71,6 +73,53 @@ class GameController:
         # Status code is written for you
         self.status.current_position = (self.character.current_position.x, self.character.current_position.y)
         self.status.move_count = self.status.move_count + 1
+
+        if self.status.current_position == self.TREASURE_COORDINATES:
+            print("\n\n\nYou found a PIZZA!!!\n\n\n")
+
+            print("""
+                     _____
+              __--~~~     ~~~--__
+           ,/'   m%%%%%%%=@%%m   `\.
+         /'  m%%%o(_)%%o%%o%%%o%%m  `\\
+       /'  %%@=%o%%%%o%%%o%%(_)o%%%%  `\\
+     /'  %%%o%%%%%=@%%%(_)%%o%%%o%@=%%  `\\
+    /  %(_)%%(_)%%%o%%%o%%%%=@(_)%%%o%%%  \\
+   /  @=%%%o%%%%o%%%(_)%%o%%o%%%%o%%%o%%%  \\
+  |  %%o%%%%=@%%%o%%%%@=%(_)%%=@%%(_)%o%%%  |
+ |  %%%%(_)%%%%o%(_)o%%o%%%o%%%%o%%o%o@=%o%  |
+ |  %%o%o%%o%%%%o%%o%%o%%%%=@%o(_)%%o%o%%%%  |
+ |  %(_)%%%%(_)%=@%%%(_)o%%%o%%o%%@=%%(_)%%  |
+ |  %%o%(_)%%%%%o%%%%%%=@%%(_)%%o%%%o%%%%%%  |
+  |  %%o%%%%o%%%%(_)o%%%%o%o%%@=%(_)%%=@%%  |
+   \  %@=%%o%(_)%%%%%o%(_)%%%o%%o%%o%%%%%  /
+    \  %%(_)%%%=@%(_)%o%o%%(_)%o%(_)%@=%  /
+     \. ~%%%o%%%%%o%o%=@%%o%%@=%%o%%o%% ,/
+       \. ~o%%(_)%%%%%o%(_)%%o%(_)o%% ,/
+         \_ ~%%o%=@%(_)%%o%%(_)%%~  ,/
+           `\__~~~o%%%%o%%%%%~  __/'
+               `~--.._____,,--~'
+            """)
+            input("\n\n\nPress enter when you've eaten your pizza....")
+            print("\n\nYou need to wash that pizza down with some cold beer!\n\n")
+            print("""
+      .   *   ..  . *  *
+    *  * @()Ooc()*   o  .
+        (Q@*0CG*O()   ___
+        |\\_________/|/ _ \\
+        |  |  |  |  | / | |
+        |  |  |  |  | | | |
+        |  |  |  |  | | | |
+        |  |  |  |  | | | |
+        |  |  |  |  | | | |
+        |  |  |  |  | \\_| |
+        |  |  |  |  |\___/
+        |\\_|__|__|_/|
+         \\_________/
+            """)
+
+            self.is_finished = True
+            
 
     ## ************************************************
     ## METHODS THAT EXIST JUST TO HELP WITH TESTING -- PREWRITTEN FOR YOU
