@@ -8,11 +8,34 @@ from levelup.position import Position
 
 class GameStatus:
     character_name: str = ""
+    start_position: tuple = (-100,-100)
     current_position: tuple = (-100,-100)
     move_count: int = 0
+    map: Map = None
 
     def __str__(self) -> str:
-        return f"{self.character_name} is currently on {self.current_position} and moved {self.move_count} times."
+        message: str = "" 
+        
+        str = f"{self.character_name} is currently on {self.current_position} and moved {self.move_count} times."
+
+        y: int = len(self.map.positions[0])
+
+        while y > 0:
+            y -= 1
+            str += "\n"
+
+            x: int = 0
+
+            while x < len(self.map.positions[1]):
+                if x == self.current_position[0] and y == self.current_position[1]:
+                    str += "@"
+                elif x == self.start_position[0] and y == self.start_position[1]:
+                    str += "S"
+                else:
+                    str += "."
+                x += 1
+
+        return str
 
 class GameController:
     status: GameStatus
@@ -28,7 +51,9 @@ class GameController:
 
         self.character.enter_map(self.map)
         # Status code is written for you
+        self.status.map = self.map
         self.status.current_position = (self.character.current_position.x, self.character.current_position.y)
+        self.status.start_position = self.status.current_position
         self.status.move_count = 0
 
     # Pre-written for you
