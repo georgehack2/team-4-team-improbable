@@ -11,6 +11,7 @@ class GameStatus:
     CURRENT_POS_ICON: str = "@"
     STARTING_POS_ICON: str = "S"
     EMPTY_POS_ICON: str = "."
+    SEPARATOR: str = " "
     start_position: tuple = (-100,-100)
     current_position: tuple = (-100,-100)
     move_count: int = 0
@@ -37,6 +38,7 @@ class GameStatus:
                 else:
                     str += self.EMPTY_POS_ICON
                 x += 1
+                str += self.SEPARATOR
 
         return str
 
