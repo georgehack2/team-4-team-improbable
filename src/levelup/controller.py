@@ -77,15 +77,15 @@ class GameController:
         if self.status.current_position == self.TREASURE_COORDINATES:
             print("\n\n\nYou found a PIZZA!!!\n\n\n")
 
-            print("""
+            print(r"""
                      _____
               __--~~~     ~~~--__
            ,/'   m%%%%%%%=@%%m   `\.
-         /'  m%%%o(_)%%o%%o%%%o%%m  `\\
-       /'  %%@=%o%%%%o%%%o%%(_)o%%%%  `\\
-     /'  %%%o%%%%%=@%%%(_)%%o%%%o%@=%%  `\\
-    /  %(_)%%(_)%%%o%%%o%%%%=@(_)%%%o%%%  \\
-   /  @=%%%o%%%%o%%%(_)%%o%%o%%%%o%%%o%%%  \\
+         /'  m%%%o(_)%%o%%o%%%o%%m  `\
+       /'  %%@=%o%%%%o%%%o%%(_)o%%%%  `\
+     /'  %%%o%%%%%=@%%%(_)%%o%%%o%@=%%  `\
+    /  %(_)%%(_)%%%o%%%o%%%%=@(_)%%%o%%%  \
+   /  @=%%%o%%%%o%%%(_)%%o%%o%%%%o%%%o%%%  \
   |  %%o%%%%=@%%%o%%%%@=%(_)%%=@%%(_)%o%%%  |
  |  %%%%(_)%%%%o%(_)o%%o%%%o%%%%o%%o%o@=%o%  |
  |  %%o%o%%o%%%%o%%o%%o%%%%=@%o(_)%%o%o%%%%  |
@@ -102,20 +102,20 @@ class GameController:
             """)
             input("\n\n\nPress enter when you've eaten your pizza....")
             print("\n\nYou need to wash that pizza down with some cold beer!\n\n")
-            print("""
+            print(r"""
       .   *   ..  . *  *
     *  * @()Ooc()*   o  .
         (Q@*0CG*O()   ___
-        |\\_________/|/ _ \\
+        |\_________/|/ _ \
         |  |  |  |  | / | |
         |  |  |  |  | | | |
         |  |  |  |  | | | |
         |  |  |  |  | | | |
         |  |  |  |  | | | |
-        |  |  |  |  | \\_| |
+        |  |  |  |  | \_| |
         |  |  |  |  |\___/
-        |\\_|__|__|_/|
-         \\_________/
+        |\_|__|__|_/|
+         \_________/
             """)
 
             self.is_finished = True
