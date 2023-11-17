@@ -75,8 +75,15 @@ class GameController:
         self.status.move_count = self.status.move_count + 1
 
         if self.status.current_position == self.TREASURE_COORDINATES:
-            print("\n\n\nYou found a PIZZA!!!\n\n\n")
+            print("""
 
+
+▒█░░▒█ █▀▀█ █░░█ 　 ▒█▀▀▀ █▀▀█ █░░█ █▀▀▄ █▀▀▄ 　 ▒█▀▀█ ░▀░ ▀▀█ ▀▀█ █▀▀█ █ 
+▒█▄▄▄█ █░░█ █░░█ 　 ▒█▀▀▀ █░░█ █░░█ █░░█ █░░█ 　 ▒█▄▄█ ▀█▀ ▄▀░ ▄▀░ █▄▄█ ▀ 
+░░▒█░░ ▀▀▀▀ ░▀▀▀ 　 ▒█░░░ ▀▀▀▀ ░▀▀▀ ▀░░▀ ▀▀▀░ 　 ▒█░░░ ▀▀▀ ▀▀▀ ▀▀▀ ▀░░▀ ▄ 
+            
+            """)
+            
             print(r"""
                      _____
               __--~~~     ~~~--__
@@ -101,11 +108,18 @@ class GameController:
                `~--.._____,,--~'
             """)
             input("\n\n\nPress enter when you've eaten your pizza....")
-            print("\n\nYou need to wash that pizza down with some cold beer!\n\n")
             print(r"""
+
+
+
+▒█░▒█ █▀▀ █▀▀█ █▀▀ █ █▀▀ 　 █▀▀█ █▀▀▄ 　 ░▀░ █▀▀ █▀▀ 　 █▀▀ █▀▀█ █░░ █▀▀▄ 　 █▀▀▄ █▀▀ █▀▀ █▀▀█ █ 
+▒█▀▀█ █▀▀ █▄▄▀ █▀▀ ░ ▀▀█ 　 █▄▄█ █░░█ 　 ▀█▀ █░░ █▀▀ 　 █░░ █░░█ █░░ █░░█ 　 █▀▀▄ █▀▀ █▀▀ █▄▄▀ ▀ 
+▒█░▒█ ▀▀▀ ▀░▀▀ ▀▀▀ ░ ▀▀▀ 　 ▀░░▀ ▀░░▀ 　 ▀▀▀ ▀▀▀ ▀▀▀ 　 ▀▀▀ ▀▀▀▀ ▀▀▀ ▀▀▀░ 　 ▀▀▀░ ▀▀▀ ▀▀▀ ▀░▀▀ ▄ 
+
+
       .   *   ..  . *  *
-    *  * @()Ooc()*   o  .
-        (Q@*0CG*O()   ___
+     *  * @()Ooc()*   o  .
+         (Q@*0CG*O()   ___
         |\_________/|/ _ \
         |  |  |  |  | / | |
         |  |  |  |  | | | |

@@ -48,6 +48,8 @@ class GameApp:
 
     def move_loop(self):
         while True:
+            print(self.controller.status)
+            
             response = self.prompt(
                 f"Where would you like to go? {VALID_DIRECTIONS}\n(or q to quit)",
                 lambda x: x in VALID_COMMANDS,
@@ -58,16 +60,22 @@ class GameApp:
             self.controller.move(direction)
         
             if self.controller.is_finished:
-                print("")
-                print("**********************************")
-                print("*  CONGRATULATIONS! You’ve won!  *")
-                print("**********************************")
-                print("")
-                print("You have made the IMPROBABLE ... POSSIBLE!\n")
+                print("""
+
+▒█▀▀█ █▀▀█ █▀▀▄ █▀▀▀ █▀▀█ █▀▀█ ▀▀█▀▀ █░░█ █░░ █▀▀█ ▀▀█▀▀ ░▀░ █▀▀█ █▀▀▄ █▀▀ █ 
+▒█░░░ █░░█ █░░█ █░▀█ █▄▄▀ █▄▄█ ░░█░░ █░░█ █░░ █▄▄█ ░░█░░ ▀█▀ █░░█ █░░█ ▀▀█ ▀ 
+▒█▄▄█ ▀▀▀▀ ▀░░▀ ▀▀▀▀ ▀░▀▀ ▀░░▀ ░░▀░░ ░▀▀▀ ▀▀▀ ▀░░▀ ░░▀░░ ▀▀▀ ▀▀▀▀ ▀░░▀ ▀▀▀ ▄ 
+
+▒█░░▒█ █▀▀█ █░░█ 　 ▒█░░▒█ █▀▀█ █▀▀▄ █ 
+▒█▄▄▄█ █░░█ █░░█ 　 ▒█▒█▒█ █░░█ █░░█ ▀ 
+░░▒█░░ ▀▀▀▀ ░▀▀▀ 　 ▒█▄▀▄█ ▀▀▀▀ ▀░░▀ ▄ 
+
+                """)
+                print("You have made the IMPROBABLE ... POSSIBLE!\n\nGoodbye!\n\n")
                 self.quit()
             else:
                 print(f"You moved {direction.name}")
-                print(self.controller.status)
+                
 
                 
 
@@ -80,24 +88,21 @@ class GameApp:
 
     def welcome(self):
         print("""
-                               *******************************************************
-                               *                                                     *             
-                               *               Welcome to the Level Up Game          *
-                               *                                                     *             
-                               *                                                     *             
-                               *                  A Game of Exploration              *
-                               *                                                     *             
-                               *******************************************************
+
+
+▒█░░▒█ █▀▀ █░░ █▀▀ █▀▀█ █▀▄▀█ █▀▀ 　 ▀▀█▀▀ █▀▀█ 　 ▀▀█▀▀ █░░█ █▀▀ 　 ▒█░░░ █▀▀ ▀█░█▀ █▀▀ █░░ ▒█░▒█ █▀▀█ 　 ▒█▀▀█ █▀▀█ █▀▄▀█ █▀▀ █ 
+▒█▒█▒█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀ 　 ░░█░░ █░░█ 　 ░░█░░ █▀▀█ █▀▀ 　 ▒█░░░ █▀▀ ░█▄█░ █▀▀ █░░ ▒█░▒█ █░░█ 　 ▒█░▄▄ █▄▄█ █░▀░█ █▀▀ ▀ 
+▒█▄▀▄█ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀ 　 ░░▀░░ ▀▀▀▀ 　 ░░▀░░ ▀░░▀ ▀▀▀ 　 ▒█▄▄█ ▀▀▀ ░░▀░░ ▀▀▀ ▀▀▀ ░▀▄▄▀ █▀▀▀ 　 ▒█▄▄█ ▀░░▀ ▀░░░▀ ▀▀▀ ▄ 
 
         You have entered a world where you are an engineer at a large financial services corporation. You will 
         explore the sprawling corporate campus. If you are lucky, you’ll find the FREE LUNCH and go home a WINNER. 
 
         """)
 
-        response = input("\nDo you want to play a game? y for Yes, n or q to quit\n")
+        response = input("\nDo you want to play a game? y for Yes, n or q to quit: ")
         
         if response == 'q' or response == 'n':
-            print("Goodbye!")
+            print("Goodbye!\n\n")
             quit()
 
 
