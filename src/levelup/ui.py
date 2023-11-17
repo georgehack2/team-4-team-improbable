@@ -55,8 +55,12 @@ class GameApp:
             print(f"You moved {direction.name}")
 
             if self.controller.is_finished:
-                print("CONGRATULATIONS! You’ve won!\n")
-                print("You have made the IMPROBABLE .... POSSIBLE!\n")
+                print("")
+                print("**********************************")
+                print("*  CONGRATULATIONS! You’ve won!  *")
+                print("**********************************")
+                print("")
+                print("You have made the IMPROBABLE ... POSSIBLE!\n")
                 self.quit()
             else:
                 print(self.controller.status)
